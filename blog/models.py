@@ -7,6 +7,9 @@ class Post(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
+    # ImageFiled를 사용하려면 Pillow 라이브러리 설치해야함
+    head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d', blank=True)
+
     def __str__(self):
         return f'제목 :[{self.pk}] {self.title}'
 
