@@ -10,6 +10,8 @@ class Post(models.Model):
     # ImageFiled를 사용하려면 Pillow 라이브러리 설치해야함
     head_image = models.ImageField(upload_to='blog/images/%Y/%m/%d', blank=True)
 
+    file_upload = models.FileField(upload_to='blog/files/%Y/%m/%d', blank=True)
+
     def __str__(self):
         return f'제목 :[{self.pk}] {self.title}'
 
