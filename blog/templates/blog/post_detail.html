@@ -18,6 +18,9 @@
                     <header class="mb-4">
                         <!-- Post title-->
                         <h1 class="fw-bolder mb-1">{{post.title}}</h1>
+                        {% if p.hook_text %}
+                            <h4 class="text-muted">{{post.hook_text}}</h4>
+                        {% endif %}
                         <!-- Post meta content-->
                         <div class="text-muted fst-italic mb-2">Posted on {{post.create_at}} by 홍길동(개발예정)</div>
                         <!-- Post categories-->
@@ -33,7 +36,7 @@
                         {% endif %}
                     <!-- Post content-->
                     <section class="mb-5">{{post.content}}</section>
-                        {% if post.file_upload.url %}
+                        {% if post.file_upload %}
                             <a href="{{post.file_upload.url}}" class="">다운로드 : {{post.get_file_name}}</a>
                         {% endif %}
                     
